@@ -16,16 +16,11 @@ class Triangle
   end
   def isosceles?
     side1==side2  || side2==side3 || side1==side3
-  end  
+  end
   def kind
-    rtn_kind = nil
     if !valid?
-      begin
-        raise PartnerError
-      rescue PartnerError => error
-        puts error.message
-      end
-    else equilateral? 
+      raise PartnerError
+    else equilateral?
       rtn_kind = :equilateral
     else isosceles?
       rtn_kind = :isosceles
@@ -35,9 +30,6 @@ class Triangle
     rtn_kind
   end
 
-  class PartnerError < StandardError
-    def message
-      "you must give the get_married method an argument of an instance of the person class!"
-    end
+  class TriangleError < StandardError
   end
 end

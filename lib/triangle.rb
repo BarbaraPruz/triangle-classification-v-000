@@ -27,7 +27,7 @@ class Triangle
     else
       rtn_kind = :scalene
     end
-    rtn_kind
+#    rtn_kind
   end
 
   class TriangleError < StandardError

@@ -20,9 +20,9 @@ class Triangle
   def kind
     if !valid?
       raise PartnerError
-    else equilateral?
+    elsif equilateral?
       rtn_kind = :equilateral
-    else isosceles?
+    elsif isosceles?
       rtn_kind = :isosceles
     else
       rtn_kind = :scalene
